@@ -1,3 +1,82 @@
+export const userData = [
+   {
+      name: 'Isaias',
+      email: 'Isaias@oursite.com',
+      password: 'Password1',
+      user_id: '1',
+      role: 'SuperAdmin'
+   },
+   {
+      name: 'Justin',
+      email: 'Justin@oursite.com',
+      password: 'Password2',
+      user_id: '2',
+      role: 'Admin'
+   },
+   {
+      name: 'Edward',
+      email: 'edward@oursite.com',
+      password: 'Password3',
+      user_id: '3',
+      role: 'Admin'
+   },
+   {
+      name: 'Abby',
+      email: 'abby@oursite.com',
+      password: 'Password4',
+      user_id: '4',
+      role: 'User'
+   },
+   {
+      name: 'Becky',
+      email: 'becky@oursite.com',
+      password: 'Password5',
+      user_id: '5',
+      role: 'User'
+   },
+   {
+      name: 'Charlie',
+      email: 'charlie@oursite.com',
+      password: 'Password6',
+      user_id: '6',
+      role: 'User'
+   },
+   {
+      name: 'David',
+      email: 'david@oursite.com',
+      password: 'Password7',
+      user_id: '7',
+      role: 'User'
+   },
+   {
+      name: 'Frank',
+      email: 'frank@oursite.com',
+      password: 'Password8',
+      user_id: '8',
+      role: 'User'
+   },
+   {
+      name: 'Gabby',
+      email: 'gabby@oursite.com',
+      password: 'Password9',
+      user_id: '9',
+      role: 'User'
+   },
+   {
+      name: 'Henry',
+      email: 'henry@oursite.com',
+      password: 'Password10',
+      user_id: '10',
+      role: 'User'
+   },
+]
+
+
+
+
+
+
+
 export const projectData = [
     {
        projectId: '1' ,
@@ -260,6 +339,44 @@ export const projectData = [
        ],
     },
     ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     export const taskData = [
     {
        taskId: '10' ,
@@ -1241,6 +1358,38 @@ export const projectData = [
        dueDate: ''
     },
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     ]
     export const updateData = [
     {
