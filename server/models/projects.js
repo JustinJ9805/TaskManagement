@@ -1,18 +1,22 @@
-const mongoose = require ("mongoose")
+import mongoose from "mongoose";
 
-const projectschema = mongoose.Schema({
+const finishedTasksSchema = new mongoose.Schema({
+    taskId: String,
+})
+
+const openTasksSchema = new mongoose.Schema({
+    taskId: String,
+})
+
+const ProjectSchema = new mongoose.Schema({
     projectId: Number,
-    finishedTasks: {
-        taskId: Number,
-        },
-    openTasks: {
-        taskId: Number,
-        },
+    finishedTasks: [finishedTasksSchema],
+    openTasks: [openTasksSchema],
     }, {timestamps:true}
 );
 
-const project = mongoose.model('project', projectschema)
+const Project = mongoose.model('Project', ProjectSchema)
 
-export default project
+export default Project
 
 

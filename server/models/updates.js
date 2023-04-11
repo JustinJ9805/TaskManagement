@@ -1,6 +1,6 @@
-const mongoose = require ("mongoose")
+import mongoose from "mongoose";
 
-const updateschema = mongoose.Schema({
+const UpdateSchema = mongoose.Schema({
 
     updateId: Number,
     taskId: Number,
@@ -10,6 +10,6 @@ const updateschema = mongoose.Schema({
     }, {timestamps:true}
 );
 
-const update = mongoose.model('update', updateschema)
+const Update = mongoose.model('Update', UpdateSchema)
 
-export default update;
+export default Update;
