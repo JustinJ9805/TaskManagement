@@ -1,16 +1,18 @@
-const mongoose = require ("mongoose")
+import mongoose from "mongoose";
 
-const taskschema = mongoose.Schema({
+const updateTaskSchema = mongoose.Schema({
+    updateId: Number,
+    note: String,
+})
+
+const TaskSchema = mongoose.Schema({
     taskId: Number,
     projectId: Number,
     completed: Boolean,
-    updates: {
-        updateId: Number,
-        note:String
-        },
+    updates: [updateTaskSchema]
     }, {timestamps:true}
 );
 
-const task = mongoose.model('task', taskschema)
+const Task = mongoose.model('Task', TaskSchema)
 
-export default task;
+export default Task;

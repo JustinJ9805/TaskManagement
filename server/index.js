@@ -1,13 +1,40 @@
-require ("dotenv").config();
+import express from 'express';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import bodyParser from 'body-parser';
+import cors from 'cors'
+import helmet from 'helmet'
+import morgan from 'morgan'
 
 
-const express = require("express");
-const mongoose = require("mongoose")
+// import mongodb from 'mongodb'
+// const mongoClient = mongodb;
 
+import { userData, projectData, taskData, updateData } from './data/data.js';
+
+
+//data imports
+import Project from './models/projects.js'
+import Task from './models/tasks.js'
+import Update from './models/updates.js'
+import User from './models/users.js'
+
+
+//ROUTER - cant use until defined and exported
+// import generalRoutes from './routes/general/general.js'
+// import taskRoutes from './routes/tasks/tasks.js'
+// import userRoutes from './routes/users/users.js'
+
+
+//CONFIG
+dotenv.config();
+const app = express()
 const PORT = process.env.PORT || 9000;
-
-const app = express();
-
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(helmet())
+app.use(morgan('common'))
+app.use(cors())
 app.use(express.json());
 
 app.get("/", async (req,res) => {
@@ -17,9 +44,15 @@ app.get("/", async (req,res) => {
 const start = async () => {
     try {
         await mongoose.connect(
-            process.env.MONGO_URL
-        )
-        app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
+            process.env.MONGO_URL,
+            {useNewUrlParser: true}
+        ).then (() => 
+        app.listen(PORT, () => console.log(`Listening on port: ${PORT}`)))
+            //inserting data into mongo 
+            //User.insertMany(userData); 
+            //Project.insertMany(projectData);
+            //Task.insertMany(taskData);
+            //Update.insertMany(updateData);
     } catch (error) {
         console.error(error);
         process.exit(1)
