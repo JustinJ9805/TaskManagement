@@ -21,9 +21,10 @@ import User from './models/users.js'
 
 
 //ROUTER - cant use until defined and exported
-// import generalRoutes from './routes/general/general.js'
-// import taskRoutes from './routes/tasks/tasks.js'
-// import userRoutes from './routes/users/users.js'
+import projectRoutes from './routes/projects.js'
+import taskRoutes from './routes/tasks.js'
+import userRoutes from './routes/users.js'
+import updateRoutes from './routes/updates.js'
 
 
 //CONFIG
@@ -36,6 +37,11 @@ app.use(helmet())
 app.use(morgan('common'))
 app.use(cors())
 app.use(express.json());
+
+app.use('/project', projectRoutes);
+app.use('/users', userRoutes);
+app.use('/tasks', taskRoutes);
+app.use('/updates', updateRoutes);
 
 app.get("/", async (req,res) => {
     return res.json({message: "Hello, World"});
@@ -53,6 +59,7 @@ const start = async () => {
             //Project.insertMany(projectData);
             //Task.insertMany(taskData);
             //Update.insertMany(updateData);
+            
     } catch (error) {
         console.error(error);
         process.exit(1)

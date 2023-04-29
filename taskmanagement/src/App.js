@@ -17,7 +17,7 @@ function App() {
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <CssBaseline/>
-        <Routes>
+        <Routes >
           <Route element = {<Layout />}>
             <Route path="/" element = {<Navigate to="/dashboard" replace />} />
             <Route path="/dashboard" element= {<Dashboard/>} />
