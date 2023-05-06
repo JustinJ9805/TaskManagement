@@ -2,11 +2,11 @@ import mongoose from "mongoose";
 
 const UpdateSchema = mongoose.Schema({
 
-    updateId: Number,
-    taskId: Number,
-    projectId: Number,
+    updateName: String,
+    taskName: String,
+    projectName: String,
     note: String,
-    userId: Number,
+    name: String,
     }, {timestamps:true}
 );
 
