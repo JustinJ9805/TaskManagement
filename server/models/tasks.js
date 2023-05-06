@@ -6,10 +6,11 @@ const updateTaskSchema = mongoose.Schema({
 })
 
 const TaskSchema = mongoose.Schema({
-    taskId: Number,
-    projectId: Number,
+    taskName: String,
+    projectName: String,
     completed: Boolean,
-    updates: [updateTaskSchema]
+    dueDate: Date,
+    update: String
     }, {timestamps:true}
 );
 
