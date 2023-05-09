@@ -6,23 +6,13 @@ import { ResponsiveBar } from '@nivo/bar';
 
 const Dashboard = () => {
 
-  const [users,setUsers] = useState([]);
+
 
   const [projects, setProjects] = useState([]);
 
   const [updates, setUpdates]= useState([]);
 
-  useEffect(() => {
-    axios.get('http://localhost:5001/users/getUser')
-      .then((response) => {
-        //setData(response.data);
-        setUsers(response.data);
-        //console.log(users)
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }, [])
+  
 
   useEffect(() => {
     axios.get('http://localhost:5001/project/getProjectStatus')
@@ -94,14 +84,8 @@ const Dashboard = () => {
   
 
   return (
-    <div>
-      <h2>Users</h2>
-      <ul id='user-list'>
-        {users.map(user => (
-          <li key= {user._id}>{user.name}</li>
-        ))}
-      </ul>
 
+    <div style={{}}>
       
       <div style={{height: '400px'}}>
       <h2>Project Status</h2>
@@ -111,7 +95,7 @@ const Dashboard = () => {
           innerRadius={0.5}
           padAngle={0.7}
           cornerRadius={3}
-          colors={{ scheme: 'nivo' }}
+          colors={{ scheme: 'paired' }}
           borderWidth={1}
           borderColor={{ from: 'color', modifiers: [ [ 'darker', 0.2 ] ] }}
           radialLabelsSkipAngle={10}
@@ -134,10 +118,8 @@ const Dashboard = () => {
         padding={0.3}
         valueScale={{ type: 'linear' }}
         indexScale={{ type: 'band', round: true }}
-        colors={{ scheme: 'nivo' }}
-        // axisBottom={{
-        //   tickRotation: -90,
-        // }}
+        colors={{ scheme: 'paired' }}
+        
         axisBottom={{
           tickSize: 5,
           tickPadding: 5,
@@ -154,8 +136,8 @@ const Dashboard = () => {
         motionDamping={15}
       />
       </div>
-      
     </div>
+    
   ) 
 }
 
