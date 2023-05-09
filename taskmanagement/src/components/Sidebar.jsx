@@ -36,7 +36,12 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import FlexBetween from './FlexBetween';
 import profileImage from 'assets/picture.jpeg';
 
+
+
+
+
 const navItems = [
+    
     {
         text:"Dashboard",
         icon: <HomeOutlined />
@@ -47,7 +52,9 @@ const navItems = [
     },
     {
         text:"New Project",
-        icon: <CreateNewFolderOutlined />
+        icon: <CreateNewFolderOutlined  />,
+        isModal: true,
+        //onClick: () => setIsNewProject(true)
     },
     {
         text:"Projects",
@@ -59,7 +66,8 @@ const navItems = [
     },
     {
         text:"New Employee",
-        icon: <PersonAddOutlined />
+        icon: <PersonAddOutlined />,
+        onClick: () => {}
     },
     {
         text:"Employee",
@@ -100,6 +108,8 @@ const Sidebar = ({
     const navigate = useNavigate();
     const theme = useTheme();
 
+
+
     useEffect(() => {
         setActive(pathname.substring(1));
     }, [pathname])
@@ -138,7 +148,7 @@ const Sidebar = ({
                     </FlexBetween>
                 </Box>
                 <List>
-                    {navItems.map(({ text,icon }) => {
+                    {navItems.map(({ text,icon,isModal }) => {
                         if(!icon){
                             return(
                                 <Typography key={text} sx={{m: "2.25rem 0 1rem 3rem"}}>
@@ -152,6 +162,7 @@ const Sidebar = ({
                             <ListItem key={text} disablePadding>
                                 <ListItemButton
                                     onClick={() => { 
+                                        //modal here
                                         navigate (`/${lcText}`);
                                         setActive(lcText);
                                     }}
