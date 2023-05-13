@@ -35,7 +35,8 @@ const Employees = () => {
                             border: 'double',
                             borderWidth: '2px',
                             borderColor: 'gold',
-                            width: '400px'
+                            width: '400px',
+                            backgroundColor: 'gray'
                             
                             }}>
                             <h3>{user.name}</h3>

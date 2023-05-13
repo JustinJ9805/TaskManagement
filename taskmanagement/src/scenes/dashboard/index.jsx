@@ -2,16 +2,17 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import { ResponsivePie } from '@nivo/pie';
 import { ResponsiveBar } from '@nivo/bar';
-
+import { Box } from '@mui/material';
+import { ResponsiveCalendar } from '@nivo/calendar';
+import moment from 'moment';
 
 const Dashboard = () => {
-
-
 
   const [projects, setProjects] = useState([]);
 
   const [updates, setUpdates]= useState([]);
 
+  const [tasks, setTasks] = useState([])
   
 
   useEffect(() => {
@@ -29,11 +30,22 @@ const Dashboard = () => {
     .then((response) => {
       setUpdates(response.data)
       console.log(updates);
-      
     }).catch(error => {
       console.log(error)
     });
   }, [])
+
+  useEffect(() => {
+    axios.get('http://localhost:5001/tasks/getTasksStatus')
+    .then((response) => {
+      setTasks(response.data)
+      console.log(tasks)
+    }).catch(error => {
+      console.log(error)
+    });
+  }, [])
+
+  
 
   
 
@@ -78,66 +90,131 @@ const Dashboard = () => {
     return acc;
   }, []);
 
-
+  const calenderInfo = () => {
+    // Create an object to count the number of tasks due on each date
+    const taskCounts = {};
+    tasks.forEach((task) => {
+      const dueDate = moment.utc(task.dueDate).format('YYYY-MM-DD');
+      if (taskCounts[dueDate]) {
+        taskCounts[dueDate]++;
+      } else {
+        taskCounts[dueDate] = 1;
+      }
+    });
+  
+    // Create an array of objects representing each day on the calendar
+    const today = moment().startOf('day');
+    const endDate = moment().add(1, 'year').startOf('day');
+    const days = [];
+    while (today.isBefore(endDate)) {
+      const dateStr = today.format('YYYY-MM-DD');
+      days.push({
+        day: dateStr,
+        value: taskCounts[dateStr] || 0,
+      });
+      today.add(1, 'day');
+    }
+    return days;
+  };
 
 
   
 
   return (
 
-    <div style={{}}>
-      
-      <div style={{height: '400px'}}>
-      <h2>Project Status</h2>
-        <ResponsivePie
-          data={projectData}
-          margin={{ top: 40, right: 120, bottom: 80, left: 120 }}
-          innerRadius={0.5}
-          padAngle={0.7}
-          cornerRadius={3}
-          colors={{ scheme: 'paired' }}
-          borderWidth={1}
-          borderColor={{ from: 'color', modifiers: [ [ 'darker', 0.2 ] ] }}
-          radialLabelsSkipAngle={10}
-          radialLabelsTextColor="#333333"
-          radialLabelsLinkColor={{ from: 'color' }}
-          sliceLabelsSkipAngle={10}
-          sliceLabelsTextColor="#333333"
-        />
-        
-      </div>
+    <div>
 
-      <div style={{height: '400px'}}>
-        <h2>Contributions</h2>
-        <ResponsiveBar
-        data={updateData}
-        keys={['value']}
-        layout='horizontal'
-        indexBy="id"
-        margin={{ top: 50, right: 130, bottom: 50, left: 130 }}
-        padding={0.3}
-        valueScale={{ type: 'linear' }}
-        indexScale={{ type: 'band', round: true }}
-        colors={{ scheme: 'paired' }}
-        
-        axisBottom={{
-          tickSize: 5,
-          tickPadding: 5,
-          tickRotation: -90,
-          legend: 'Number of Updates',
-          legendPosition: 'middle',
-          legendOffset: 40,
-        }}
-        labelSkipWidth={12}
-        labelSkipHeight={12}
-        labelTextColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
-        animate={true}
-        motionStiffness={90}
-        motionDamping={15}
-      />
-      </div>
+      <Box sx={{ display: 'flex'}}>
+        <Box sx={{height:500, width: 500}}>
+          <div style={{textAlign: 'center'}}>
+            <h2>Project Status</h2>
+          </div>
+          <ResponsivePie
+            data={projectData}
+            margin={{ top: 40, right: 120, bottom: 80, left: 120 }}
+            innerRadius={0.5}
+            padAngle={0.7}
+            cornerRadius={3}
+            colors={{ scheme: 'paired' }}
+            borderWidth={1}
+            borderColor={{ from: 'color', modifiers: [ [ 'darker', 0.2 ] ] }}
+            radialLabelsSkipAngle={10}
+            radialLabelsTextColor="#333333"
+            radialLabelsLinkColor={{ from: 'color' }}
+            sliceLabelsSkipAngle={10}
+            sliceLabelsTextColor="#333333"
+          />
+        </Box>
+        <Box sx={{height:500, width: 500}}>
+        <div style={{textAlign: 'center'}}>
+            <h2>Contributions</h2>
+          </div>
+          <ResponsiveBar
+          data={updateData}
+          keys={['value']}
+          layout='horizontal'
+          indexBy="id"
+          margin={{ top: 50, right: 130, bottom: 50, left: 130 }}
+          padding={0.3}
+          valueScale={{ type: 'linear' }}
+          indexScale={{ type: 'band', round: true }}
+          colors={{ scheme: 'paired' }}
+          
+          axisBottom={{
+            tickSize: 5,
+            tickPadding: 5,
+            tickRotation: -90,
+            legend: 'Number of Updates',
+            legendPosition: 'middle',
+            legendOffset: 40,
+          }}
+          labelSkipWidth={12}
+          labelSkipHeight={12}
+          labelTextColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
+          animate={true}
+          motionStiffness={90}
+          motionDamping={15}
+        />
+        </Box>
+      </Box>
+
+      <Box>
+        <br></br>
+        <br></br>
+        <br></br>
+      </Box>
+
+      <Box sx={{height:300, width: 1000}}>
+        <div style={{textAlign: 'center'}}>
+          <h2>Tasks Calendar</h2>
+        </div>
+        <ResponsiveCalendar
+          data={calenderInfo()}
+          from={moment().subtract(2, 'month').format('YYYY-MM-DD')}
+          to={moment().add(2, 'month').format('YYYY-MM-DD')}
+          emptyColor="#eeeeee"
+          colors={['#61cdbb', '#97e3d5', '#e8c1a0', '#f47560']}
+          //margin={{ top: 50, right: 40, bottom: 50, left: 40 }}
+          yearSpacing={40}
+          monthBorderColor="#ffffff"
+          dayBorderWidth={2}
+          dayBorderColor="#ffffff"
+          legends={[      
+            {        
+              anchor: 'bottom-right',
+              direction: 'row',        
+              translateY: 36,        
+              itemCount: 4,        
+              itemWidth: 42,        
+              itemHeight: 36,        
+              itemsSpacing: 14,        
+              itemDirection: 'right-to-left',
+            },    
+          ]}
+        />
+      </Box>
+
     </div>
-    
   ) 
 }
 

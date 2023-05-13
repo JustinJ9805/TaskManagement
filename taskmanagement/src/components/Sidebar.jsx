@@ -44,6 +44,7 @@ const navItems = [
     
     {
         text:"Dashboard",
+        link: 'Dashboard',
         icon: <HomeOutlined />
     },
     {
@@ -52,12 +53,14 @@ const navItems = [
     },
     {
         text:"New Project",
+        link: 'NewProject',
         icon: <CreateNewFolderOutlined  />,
         isModal: true,
         //onClick: () => setIsNewProject(true)
     },
     {
         text:"Projects",
+        link: 'Projects',
         icon: <FolderOpenOutlined />
     },
     {
@@ -66,11 +69,12 @@ const navItems = [
     },
     {
         text:"New Employee",
+        link: 'NewEmployee',
         icon: <PersonAddOutlined />,
-        onClick: () => {}
     },
     {
         text:"Employee",
+        link: 'Employee',
         icon: <PortraitOutlined />
     },
     {
@@ -79,10 +83,12 @@ const navItems = [
     },
     {
         text:"Today",
+        link: 'Today',
         icon: <TodayOutlined />
     },
     {
         text:"Monthly",
+        link: 'Monthly',
         icon: <CalendarMonthOutlined />
     },
     {
@@ -91,6 +97,7 @@ const navItems = [
     },
     {
         text:"Setting",
+        link: 'Setting',
         icon: <SettingsOutlined />
     },
     
@@ -148,7 +155,7 @@ const Sidebar = ({
                     </FlexBetween>
                 </Box>
                 <List>
-                    {navItems.map(({ text,icon,isModal }) => {
+                    {navItems.map(({ text,icon,link,isModal }) => {
                         if(!icon){
                             return(
                                 <Typography key={text} sx={{m: "2.25rem 0 1rem 3rem"}}>
@@ -156,21 +163,21 @@ const Sidebar = ({
                                 </Typography>
                             )
                         }
-                        const lcText = text.toLocaleLowerCase();
+                        const lcLink = link.toLocaleLowerCase();
 
                         return(
-                            <ListItem key={text} disablePadding>
+                            <ListItem key={link} disablePadding>
                                 <ListItemButton
                                     onClick={() => { 
                                         //modal here
-                                        navigate (`/${lcText}`);
-                                        setActive(lcText);
+                                        navigate (`/${lcLink}`);
+                                        setActive(lcLink);
                                     }}
                                         sx={{
-                                            backgroundColor: active === lcText 
+                                            backgroundColor: active === lcLink 
                                             ? theme.palette.secondary[300]
                                             : "transparent",
-                                            color: active === lcText 
+                                            color: active === lcLink 
                                             ? theme.palette.primary[600]
                                             : theme.palette.secondary[100],
                                         }}
@@ -178,7 +185,7 @@ const Sidebar = ({
                                         <ListItemIcon
                                             sx={{
                                                 ml: "2rem",
-                                                color: active === lcText 
+                                                color: active === lcLink 
                                                 ? theme.palette.primary[600]
                                                 : theme.palette.secondary[200],
                                             }}
@@ -186,7 +193,7 @@ const Sidebar = ({
                                          {icon}   
                                         </ListItemIcon>
                                         <ListItemText primary = {text}/>
-                                        {active === lcText && (
+                                        {active === lcLink && (
                                             <ChevronRightOutlined sx = {{ml: "auto"}} />
                                         )}
                                     </ListItemButton>

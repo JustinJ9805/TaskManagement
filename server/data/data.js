@@ -143,14 +143,14 @@ export const taskData = [
         taskName: 'Task1' ,
         projectName: 'Build a Data Set' ,
         completed: 'true' ,
-        dueDate: '2023-06-01',
+        dueDate: '2023-06-03',
         update: '1'
     },
     {
         taskName: 'Task2' ,
         projectName: 'Build a Data Set' ,
         completed: 'true' ,
-        dueDate: '2023-06-01',
+        dueDate: '2023-05-01',
         update: '1'
     },
 
@@ -158,14 +158,14 @@ export const taskData = [
         taskName: 'Task1' ,
         projectName: 'Create a MongoDB' ,
         completed: 'true' ,
-        dueDate: '2023-06-01',
+        dueDate: '2023-03-07',
         update: '1'
     },
     {
         taskName: 'Task2' ,
         projectName: 'Create a MongoDB' ,
         completed: 'false' ,
-        dueDate: '2023-06-01',
+        dueDate: '2023-07-09',
         update: '1'
     },
 
@@ -173,14 +173,14 @@ export const taskData = [
         taskName: 'Task1' ,
         projectName: 'Create a Frontend Application' ,
         completed: 'true' ,
-        dueDate: '2023-06-01',
+        dueDate: '2023-08-12',
         update: '1'
     },
     {
         taskName: 'Task2' ,
         projectName: 'Create a Frontend Application' ,
         completed: 'true' ,
-        dueDate: '2023-06-01',
+        dueDate: '2023-10-28',
         update: '1'
     },
 
@@ -188,14 +188,14 @@ export const taskData = [
         taskName: 'Task1' ,
         projectName: 'Create a Backend using Node, Express, and Mongoose' ,
         completed: 'true' ,
-        dueDate: '2023-06-01',
+        dueDate: '2023-10-14',
         update: '1'
     },
     {
         taskName: 'Task2' ,
         projectName: 'Create a Backend using Node, Express, and Mongoose' ,
         completed: 'false' ,
-        dueDate: '2023-06-01',
+        dueDate: '2023-01-07',
         update: '1'
     },
 
@@ -203,14 +203,14 @@ export const taskData = [
         taskName: 'Task1' ,
         projectName: 'Push data into MongoDB' ,
         completed: 'true' ,
-        dueDate: '2023-06-01',
+        dueDate: '2023-03-20',
         update: '1'
     },
     {
         taskName: 'Task2' ,
         projectName: 'Push data into MongoDB' ,
         completed: 'true' ,
-        dueDate: '2023-06-01',
+        dueDate: '2023-05-04',
         update: '1'
     },
 
@@ -218,14 +218,14 @@ export const taskData = [
         taskName: 'Task1' ,
         projectName: 'Create our API endpoints' ,
         completed: 'true' ,
-        dueDate: '2023-06-01',
+        dueDate: '2023-07-15',
         update: '1'
     },
     {
         taskName: 'Task2' ,
         projectName: 'Create our API endpoints' ,
         completed: 'false' ,
-        dueDate: '2023-06-01',
+        dueDate: '2023-11-27',
         update: '1'
     },
 
@@ -233,14 +233,14 @@ export const taskData = [
         taskName: 'Task1' ,
         projectName: 'Test our Application' ,
         completed: 'true' ,
-        dueDate: '2023-06-01',
+        dueDate: '2023-06-23',
         update: '1'
     },
     {
         taskName: 'Task2' ,
         projectName: 'Test our Application' ,
         completed: 'true' ,
-        dueDate: '2023-06-01',
+        dueDate: '2023-08-13',
         update: '1'
     },
 
@@ -248,14 +248,14 @@ export const taskData = [
         taskName: 'Task1' ,
         projectName: 'Cleaning' ,
         completed: 'true' ,
-        dueDate: '2023-06-01',
+        dueDate: '2023-09-13',
         update: '1'
     },
     {
         taskName: 'Task2' ,
         projectName: 'Cleaning' ,
         completed: 'false' ,
-        dueDate: '2023-06-01',
+        dueDate: '2023-09-19',
         update: '1'
     },
 
@@ -263,14 +263,14 @@ export const taskData = [
         taskName: 'Task1' ,
         projectName: 'Launch' ,
         completed: 'true' ,
-        dueDate: '2023-06-01',
+        dueDate: '2023-11-02',
         update: '1'
     },
     {
         taskName: 'Task2' ,
         projectName: 'Launch' ,
         completed: 'true' ,
-        dueDate: '2023-06-01',
+        dueDate: '2023-07-05',
         update: '1'
     },
 
@@ -278,14 +278,14 @@ export const taskData = [
         taskName: 'Task1' ,
         projectName: 'Maintain' ,
         completed: 'true' ,
-        dueDate: '2023-06-01',
+        dueDate: '2023-04-10',
         update: '1'
     },
     {
         taskName: 'Task2' ,
         projectName: 'Maintain' ,
         completed: 'false' ,
-        dueDate: '2023-06-01',
+        dueDate: '2023-05-27',
         update: '1'
     },
 ]
