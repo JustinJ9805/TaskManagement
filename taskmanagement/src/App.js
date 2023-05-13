@@ -9,6 +9,8 @@ import Layout from "scenes/layout" ;
 import Dashboard from "scenes/dashboard";
 import Employees from 'scenes/employees';
 import Projects from 'scenes/projects';
+import NewEmployee from "scenes/newEmployee";
+import NewProject from "scenes/newProject";
 
 function App() {
   
@@ -26,6 +28,8 @@ function App() {
             <Route path="/dashboard" element= {<Dashboard/>} />
             <Route path="/employee" element={<Employees/>}/>
             <Route path="/projects" element={<Projects/>}/>
+            <Route path="/newemployee" element={<NewEmployee/>}/>
+            <Route path="/newproject" element={<NewProject/>}/>
           </Route>
         </Routes>
       </ThemeProvider>
