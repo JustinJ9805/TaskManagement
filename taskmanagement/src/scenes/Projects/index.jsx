@@ -2,10 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Button } from "@mui/material";
-import {DndContext, closestCenter } from "@dnd-kit/core";
-import { arrayMove, SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
-
-
 
 
 const Projects = () => {
@@ -14,6 +10,10 @@ const Projects = () => {
     const [updates, setUpdates]= useState([]);
 
     const [tasks, setTasks] = useState([]);
+
+    const [selectedProject, setSelectedProject] = useState([])
+
+    const [selectedTask, setSelectedTask] = useState([])
 
     useEffect(() => {
         axios.get('http://localhost:5001/project/getProjectStatus')
@@ -46,22 +46,77 @@ const Projects = () => {
         })
     })
 
-    const [projectData, setProjectData] = useState(['New', 'In Progress', 'Completed', 'Delayed'])
-
-    function handleDragEnd(event){
-
+    const moreInfo =  (props) => {
+         setSelectedProject(props)
+         setSelectedTask('')
     }
 
+    const taskMoreInfo =(props) => {
+        setSelectedTask(props)
+    }
 
-    
-
+    const filteredTasks = tasks.filter(task => task.projectName === selectedProject )
+    console.log(filteredTasks)
     return(
-        <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-            <h3>Project Status</h3>
-            <SortableContext items={projectData} strategy={verticalListSortingStrategy}>
-                
-            </SortableContext>
-        </DndContext>
+        <div>
+              
+            <h3>Projects Page</h3>
+            <div>
+                <ul>
+                    {projects.map(project => {
+                        return(
+                            <div>
+                                <ul>
+                                    
+                                    <Button onClick={() => moreInfo(project.projectName)} style={{color: 'gray'}}>
+                                        <h3>Project: {project.projectName}</h3>
+                                    </Button>
+                                    
+                                    {selectedProject === project.projectName && (
+                                        <div>
+                                            {tasks
+                                                .filter(task => task.projectName === selectedProject)
+                                                .map(task => (
+                                                    <div>
+                                                        <ul>
+                                                            <Button onClick={() => taskMoreInfo(task.taskName)} key={task.taskName}>
+                                                                <h3>{task.taskName}: {task.completed ? 'Complete' : 'Open'}</h3>
+                                                            </Button>
+
+                                                            <ul>
+                                                                {selectedTask === task.taskName && (
+                                                                    <div>
+                                                                        {updates
+                                                                        .filter(update => update.projectName === selectedProject && update.taskName === selectedTask)
+                                                                        .map(update => (
+                                                                            <div>
+                                                                                <Button key={update.updateName}>
+                                                                                    <h3>{update.updateName}: {update.note}</h3>
+                                                                                </Button>
+                                                                            </div>
+                                                                        ))}
+                                                                    </div>
+                                                                )}
+                                                            </ul>
+                                                        </ul>
+                                                    </div>
+                                                ))
+                                            }
+
+                                        </div>
+                                    
+                                    )}
+                                </ul>
+                            </div>
+                        
+                        )
+                    })}
+                </ul>
+            </div>
+
+            
+
+        </div>
     )
     
 }
