@@ -6,6 +6,8 @@ import { Box } from '@mui/material';
 import { ResponsiveCalendar } from '@nivo/calendar';
 import moment from 'moment';
 
+
+
 const Dashboard = () => {
 
   const [projects, setProjects] = useState([]);
@@ -14,6 +16,9 @@ const Dashboard = () => {
 
   const [tasks, setTasks] = useState([])
   
+  
+
+ 
 
   useEffect(() => {
     axios.get('http://localhost:5001/project/getProjectStatus')
@@ -70,6 +75,12 @@ const Dashboard = () => {
       value: projects.filter(p => p.completed === 'New').length,
       color: 'hsl(240, 70%, 50%)',
     },
+    {
+      id: 'Delayed',
+      label: 'Delayed',
+      value: projects.filter(p => p.completed === 'Delayed').length,
+      color: 'hsl(200, 70%, 50%)'
+    }
   ];
 
 
@@ -93,9 +104,19 @@ const Dashboard = () => {
   const calenderInfo = () => {
     // Create an object to count the number of tasks due on each date
     const taskCounts = {};
+
     tasks.forEach((task) => {
       const dueDate = moment.utc(task.dueDate).format('YYYY-MM-DD');
       if (taskCounts[dueDate]) {
+        taskCounts[dueDate]++;
+      } else {
+        taskCounts[dueDate] = 1;
+      }
+    });
+
+    projects.forEach((project) => {
+      const dueDate = moment.utc(project.dueDate).format('YYYY-MM-DD');
+      if(taskCounts[dueDate]){
         taskCounts[dueDate]++;
       } else {
         taskCounts[dueDate] = 1;
@@ -130,6 +151,7 @@ const Dashboard = () => {
             <h2>Project Status</h2>
           </div>
           <ResponsivePie
+           
             data={projectData}
             margin={{ top: 40, right: 120, bottom: 80, left: 120 }}
             innerRadius={0.5}
@@ -147,7 +169,7 @@ const Dashboard = () => {
         </Box>
         <Box sx={{height:500, width: 500}}>
         <div style={{textAlign: 'center'}}>
-            <h2>Contributions</h2>
+            <h2>Updates Posted</h2>
           </div>
           <ResponsiveBar
           data={updateData}
@@ -191,10 +213,10 @@ const Dashboard = () => {
         <ResponsiveCalendar
           data={calenderInfo()}
           from={moment().subtract(2, 'month').format('YYYY-MM-DD')}
-          to={moment().add(2, 'month').format('YYYY-MM-DD')}
+          to={moment().add(12, 'month').format('YYYY-MM-DD')}
           emptyColor="#eeeeee"
           colors={['#61cdbb', '#97e3d5', '#e8c1a0', '#f47560']}
-          //margin={{ top: 50, right: 40, bottom: 50, left: 40 }}
+          margin={{ top: 50, right: 40, bottom: 50, left: 40 }}
           yearSpacing={40}
           monthBorderColor="#ffffff"
           dayBorderWidth={2}

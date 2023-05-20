@@ -6,6 +6,9 @@ const ProjectSchema = new mongoose.Schema({
     completedTasks: String,
     openTasks: String,
     completed: String,
+    dueDate: Date,
+    description: String,
+    user: String
     }, {timestamps:true}
 );
 
