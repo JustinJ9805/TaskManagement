@@ -72,93 +72,69 @@ export const projectData = [
        projectName: 'Build a Data Set' ,
        completedTasks: '1,2',
        openTasks: '',
-       completed: 'Completed',
-       dueDate:'2023-04-18',
-       description: 'Create a bunch of data so we have some mock information to play with in our database',
-       user: 'Isaias'
+       completed: 'Completed'
     },
     {
        projectName: 'Create a MongoDB' ,
        completedTasks: '1',
        openTasks: '2',
-       completed: 'Delayed',
-       dueDate:'2023-05-23',
-       description: 'Our database will be hosted on MongoDB- lets us create our cluster of tables easily',
-       user: 'Edward'
+       completed: 'In Progress'
     },
     {
        projectName: 'Create a Frontend Application' ,
        completedTasks: '',
        openTasks: '1,2',
-       completed: 'New',
-       dueDate:'2024-03-21',
-       description: 'Create our frontend application using React',
-       user: 'Justin'
+       completed: 'New'
     },
     {
        projectName: 'Create a Backend using Node, Express, and Mongoose' ,
        completedTasks: '1',
        openTasks: '2',
-       completed: 'In Progress',
-       dueDate:'2024-04-12',
-       description: 'Create the server using Node and Express- Mongoose allows us to communicate easily with out MongoDB',
-       user: 'Justin'
+       completed: 'In Progress'
     },
     {
        projectName: 'Push data into MongoDB' ,
        completedTasks: '1,2',
        openTasks: '',
-       completed: 'Completed',
-       dueDate:'2024-01-13',
-       description: 'Create Models that allow us to create structured tables and push data into ou MongoDB',
-       user: 'Isaias'
+       completed: 'Completed'
     },
     {
        projectName: 'Create our API endpoints' ,
        completedTasks: '',
        openTasks: '1,2',
-       completed: 'New',
-       dueDate:'2024-05-11',
-       description: 'Now that we have our server file, we need to create HTTP requests and API endpoints',
-        user: 'Isaias'
+       completed: 'New'
     },
     {
        projectName: 'Test our Application' ,
        completedTasks: '1,2',
        openTasks: '',
-       completed: 'Completed',
-       dueDate:'2023-12-22',
-       description: 'Make sure our front end works and can push and pull data from our server',
-       user: 'Edward'
+       completed: 'Completed'
     },
     {
        projectName: 'Cleaning' ,
        completedTasks: '1',
        openTasks: '2',
-       completed: 'In Progress',
-       dueDate:'2023-04-09',
-       description: 'Clean our code and utlize best practices',
-       user: 'Justin'
+       completed: 'In Progress'
     },
     {
        projectName: 'Launch' ,
        completedTasks: '1,2',
        openTasks: '',
-       completed: 'Completed',
-       dueDate:'2024-02-26',
-       description: 'Demo day- hoping it all goes well!',
-       user: 'Justin'
+       completed: 'Completed'
     },{
         projectName: 'Maintain' ,
         completedTasks: '1',
         openTasks: '2',
-        completed: 'In Progress',
-        dueDate:'2023-11-13',
-        description: 'End is in sight- we have to do routine maintenance and we are set to go',
-        user: 'Edward' 
-    },
+        completed: 'In Progress'
+     },
     
     ]
+
+
+
+
+
+
 
 
 
@@ -168,16 +144,14 @@ export const taskData = [
         projectName: 'Build a Data Set' ,
         completed: 'true' ,
         dueDate: '2023-06-03',
-        update: '1',
-        description: 'this is a description for what this task entails'
+        update: '1'
     },
     {
         taskName: 'Task2' ,
         projectName: 'Build a Data Set' ,
         completed: 'true' ,
         dueDate: '2023-05-01',
-        update: '1',
-        description: 'this is a description for what this task entails'
+        update: '1'
     },
 
     {
@@ -185,16 +159,14 @@ export const taskData = [
         projectName: 'Create a MongoDB' ,
         completed: 'true' ,
         dueDate: '2023-03-07',
-        update: '1',
-        description: 'this is a description for what this task entails'
+        update: '1'
     },
     {
         taskName: 'Task2' ,
         projectName: 'Create a MongoDB' ,
         completed: 'false' ,
         dueDate: '2023-07-09',
-        update: '1',
-        description: 'this is a description for what this task entails'
+        update: '1'
     },
 
     {
@@ -202,16 +174,14 @@ export const taskData = [
         projectName: 'Create a Frontend Application' ,
         completed: 'true' ,
         dueDate: '2023-08-12',
-        update: '1',
-        description: 'this is a description for what this task entails'
+        update: '1'
     },
     {
         taskName: 'Task2' ,
         projectName: 'Create a Frontend Application' ,
         completed: 'true' ,
         dueDate: '2023-10-28',
-        update: '1',
-        description: 'this is a description for what this task entails'
+        update: '1'
     },
 
     {
@@ -219,16 +189,14 @@ export const taskData = [
         projectName: 'Create a Backend using Node, Express, and Mongoose' ,
         completed: 'true' ,
         dueDate: '2023-10-14',
-        update: '1',
-        description: 'this is a description for what this task entails'
+        update: '1'
     },
     {
         taskName: 'Task2' ,
         projectName: 'Create a Backend using Node, Express, and Mongoose' ,
         completed: 'false' ,
         dueDate: '2023-01-07',
-        update: '1',
-        description: 'this is a description for what this task entails'
+        update: '1'
     },
 
     {
@@ -236,16 +204,14 @@ export const taskData = [
         projectName: 'Push data into MongoDB' ,
         completed: 'true' ,
         dueDate: '2023-03-20',
-        update: '1',
-        description: 'this is a description for what this task entails'
+        update: '1'
     },
     {
         taskName: 'Task2' ,
         projectName: 'Push data into MongoDB' ,
         completed: 'true' ,
         dueDate: '2023-05-04',
-        update: '1',
-        description: 'this is a description for what this task entails'
+        update: '1'
     },
 
     {
@@ -253,16 +219,14 @@ export const taskData = [
         projectName: 'Create our API endpoints' ,
         completed: 'true' ,
         dueDate: '2023-07-15',
-        update: '1',
-        description: 'this is a description for what this task entails'
+        update: '1'
     },
     {
         taskName: 'Task2' ,
         projectName: 'Create our API endpoints' ,
         completed: 'false' ,
         dueDate: '2023-11-27',
-        update: '1',
-        description: 'this is a description for what this task entails'
+        update: '1'
     },
 
     {
@@ -270,16 +234,14 @@ export const taskData = [
         projectName: 'Test our Application' ,
         completed: 'true' ,
         dueDate: '2023-06-23',
-        update: '1',
-        description: 'this is a description for what this task entails'
+        update: '1'
     },
     {
         taskName: 'Task2' ,
         projectName: 'Test our Application' ,
         completed: 'true' ,
         dueDate: '2023-08-13',
-        update: '1',
-        description: 'this is a description for what this task entails'
+        update: '1'
     },
 
     {
@@ -287,16 +249,14 @@ export const taskData = [
         projectName: 'Cleaning' ,
         completed: 'true' ,
         dueDate: '2023-09-13',
-        update: '1',
-        description: 'this is a description for what this task entails'
+        update: '1'
     },
     {
         taskName: 'Task2' ,
         projectName: 'Cleaning' ,
         completed: 'false' ,
         dueDate: '2023-09-19',
-        update: '1',
-        description: 'this is a description for what this task entails'
+        update: '1'
     },
 
     {
@@ -304,16 +264,14 @@ export const taskData = [
         projectName: 'Launch' ,
         completed: 'true' ,
         dueDate: '2023-11-02',
-        update: '1',
-        description: 'this is a description for what this task entails'
+        update: '1'
     },
     {
         taskName: 'Task2' ,
         projectName: 'Launch' ,
         completed: 'true' ,
         dueDate: '2023-07-05',
-        update: '1',
-        description: 'this is a description for what this task entails'
+        update: '1'
     },
 
     {
@@ -321,16 +279,14 @@ export const taskData = [
         projectName: 'Maintain' ,
         completed: 'true' ,
         dueDate: '2023-04-10',
-        update: '1',
-        description: 'this is a description for what this task entails'
+        update: '1'
     },
     {
         taskName: 'Task2' ,
         projectName: 'Maintain' ,
         completed: 'false' ,
         dueDate: '2023-05-27',
-        update: '1',
-        description: 'this is a description for what this task entails'
+        update: '1'
     },
 ]
 
@@ -342,7 +298,7 @@ export const taskData = [
 
 export const updateData = [
     {
-        updateName: 'Update' ,
+        updateName: 'aUpdate' ,
         taskName: 'Task1' ,
         projectName: 'Build a Data Set' ,
         note: 'this is a note on this task',
@@ -350,7 +306,7 @@ export const updateData = [
         
     },
     {
-        updateName: 'Update' ,
+        updateName: 'aUpdate' ,
         taskName: 'Task2' ,
         projectName: 'Build a Data Set' ,
         note: 'this is a note on this task',
@@ -358,14 +314,14 @@ export const updateData = [
     },
 
     {
-        updateName: 'Update' ,
+        updateName: 'aUpdate' ,
         taskName: 'Task1' ,
         projectName: 'Create a MongoDB' ,
         note: 'this is a note on this task',
         name: 'Abby' ,
     },
     {
-        updateName: 'Update' ,
+        updateName: 'aUpdate' ,
         taskName: 'Task2' ,
         projectName: 'Create a MongoDB' ,
         note: 'this is a note on this task',
@@ -373,14 +329,14 @@ export const updateData = [
     },
 
     {
-        updateName: 'Update' ,
+        updateName: 'aUpdate' ,
         taskName: 'Task1' ,
         projectName: 'Create a Frontend Application' ,
         note: 'this is a note on this task',
         name: 'Frank' ,
     },
     {
-        updateName: 'Update' ,
+        updateName: 'aUpdate' ,
         taskName: 'Task2' ,
         projectName: 'Create a Frontend Application' ,
         note: 'this is a note on this task',
@@ -388,14 +344,14 @@ export const updateData = [
     },
 
     {
-        updateName: 'Update' ,
+        updateName: 'aUpdate' ,
         taskName: 'Task1' ,
         projectName: 'Create a Backend using Node, Express, and Mongoose' ,
         note: 'this is a note on this task',
         name: 'Edward' ,
     },
     {
-        updateName: 'Update' ,
+        updateName: 'aUpdate' ,
         taskName: 'Task2' ,
         projectName: 'Create a Backend using Node, Express, and Mongoose' ,
         note: 'this is a note on this task',
@@ -403,14 +359,14 @@ export const updateData = [
     },
 
     {
-        updateName: 'Update' ,
+        updateName: 'aUpdate' ,
         taskName: 'Task1' ,
         projectName: 'Push data into MongoDB' ,
         note: 'this is a note on this task',
         name: 'Abby' ,
     },
     {
-        updateName: 'Update' ,
+        updateName: 'aUpdate' ,
         taskName: 'Task2' ,
         projectName: 'Push data into MongoDB' ,
         note: 'this is a note on this task',
@@ -418,14 +374,14 @@ export const updateData = [
     },
 
     {
-        updateName: 'Update' ,
+        updateName: 'aUpdate' ,
         taskName: 'Task1' ,
         projectName: 'Create our API endpoints' ,
         note: 'this is a note on this task',
         name: 'Isaias' ,
     },
     {
-        updateName: 'Update' ,
+        updateName: 'aUpdate' ,
         taskName: 'Task2' ,
         projectName: 'Create our API endpoints' ,
         note: 'this is a note on this task',
@@ -433,14 +389,14 @@ export const updateData = [
     },
 
     {
-        updateName: 'Update' ,
+        updateName: 'aUpdate' ,
         taskName: 'Task1' ,
         projectName: 'Test our Application' ,
         note: 'this is a note on this task',
         name: 'Becky' ,
     },
     {
-        updateName: 'Update' ,
+        updateName: 'aUpdate' ,
         taskName: 'Task2' ,
         projectName: 'Test our Application' ,
         note: 'this is a note on this task',
@@ -448,14 +404,14 @@ export const updateData = [
     },
 
     {
-        updateName: 'Update' ,
+        updateName: 'aUpdate' ,
         taskName: 'Task1' ,
         projectName: 'Cleaning' ,
         note: 'this is a note on this task',
         name: 'Justin' ,
     },
     {
-        updateName: 'Update' ,
+        updateName: 'aUpdate' ,
         taskName: 'Task2' ,
         projectName: 'Cleaning' ,
         note: 'this is a note on this task',
@@ -463,14 +419,14 @@ export const updateData = [
     },
 
     {
-        updateName: 'Update' ,
+        updateName: 'aUpdate' ,
         taskName: 'Task1' ,
         projectName: 'Launch' ,
         note: 'this is a note on this task',
         name: 'Frank' ,
     },
     {
-        updateName: 'Update' ,
+        updateName: 'aUpdate' ,
         taskName: 'Task2' ,
         projectName: 'Launch' ,
         note: 'this is a note on this task',
@@ -478,14 +434,14 @@ export const updateData = [
     },
 
     {
-        updateName: 'Update' ,
+        updateName: 'aUpdate' ,
         taskName: 'Task1' ,
         projectName: 'Maintain' ,
         note: 'this is a note on this task',
         name: 'Abby' ,
     },
     {
-        updateName: 'Update' ,
+        updateName: 'aUpdate' ,
         taskName: 'Task2' ,
         projectName: 'Maintain' ,
         note: 'this is a note on this task',
