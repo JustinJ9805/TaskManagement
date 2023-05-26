@@ -69,7 +69,12 @@ const Projects = () => {
                                 <ul>
                                     
                                     <Button onClick={() => moreInfo(project.projectName)} style={{color: 'gray'}}>
-                                        <h3>Project: {project.projectName}</h3>
+                                        <div>
+                                            <h3>Project: {project.projectName}</h3>
+                                            <h4>Due Date: {project.dueDate}</h4>
+                                            <h4>Description: {project.description}</h4>
+                                            <h5>Assign: {project.user}</h5>
+                                        </div> 
                                     </Button>
                                     
                                     {selectedProject === project.projectName && (
@@ -80,9 +85,12 @@ const Projects = () => {
                                                     <div>
                                                         <ul>
                                                             <Button onClick={() => taskMoreInfo(task.taskName)} key={task.taskName}>
-                                                                <h3>{task.taskName}: {task.completed ? 'Complete' : 'Open'}</h3>
+                                                                <div>
+                                                                    <h3>{task.taskName}: {task.completed ? 'Complete' : 'Open'}</h3>
+                                                                    <h4>Due Date:{task.dueDate}</h4>
+                                                                    <h4>Description:{task.description}</h4>
+                                                                </div>
                                                             </Button>
-
                                                             <ul>
                                                                 {selectedTask === task.taskName && (
                                                                     <div>
@@ -91,7 +99,11 @@ const Projects = () => {
                                                                         .map(update => (
                                                                             <div>
                                                                                 <Button key={update.updateName}>
-                                                                                    <h3>{update.updateName}: {update.note}</h3>
+                                                                                    <div>
+                                                                                        <h3>{update.updateName}: {update.note}</h3>                                                
+                                                                                        <h5>Posted:{update.name}</h5>
+                                                                                    </div>
+                                                                                    
                                                                                 </Button>
                                                                             </div>
                                                                         ))}
