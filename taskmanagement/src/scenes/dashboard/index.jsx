@@ -2,20 +2,21 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import { ResponsivePie } from '@nivo/pie';
 import { ResponsiveBar } from '@nivo/bar';
-import { Box } from '@mui/material';
+import { Box, useTheme } from '@mui/material';
 import { ResponsiveCalendar } from '@nivo/calendar';
 import moment from 'moment';
 
 
 
 const Dashboard = () => {
-
+  
   const [projects, setProjects] = useState([]);
 
   const [updates, setUpdates]= useState([]);
 
   const [tasks, setTasks] = useState([])
   
+  const theme = useTheme();
   
 
  
@@ -139,7 +140,17 @@ const Dashboard = () => {
   };
 
 
-  
+  const chartTheme = {
+    textColor: theme.palette.text.secondary, // Use the text color from the MUI theme
+    fontSize: 12,
+    fontFamily: 'Inter, sans-serif',
+    tooltip: {
+      container: {
+        background: theme.palette.background.paper, // Use the background color from the MUI theme
+        color: theme.palette.text.secondary, // Use the text color from the MUI theme
+      },
+    },
+  };
 
   return (
 
@@ -165,6 +176,7 @@ const Dashboard = () => {
             radialLabelsLinkColor={{ from: 'color' }}
             sliceLabelsSkipAngle={10}
             sliceLabelsTextColor="#333333"
+            theme={chartTheme}
           />
         </Box>
         <Box sx={{height:500, width: 500}}>
@@ -181,6 +193,7 @@ const Dashboard = () => {
           valueScale={{ type: 'linear' }}
           indexScale={{ type: 'band', round: true }}
           colors={{ scheme: 'paired' }}
+          theme={chartTheme}
           
           axisBottom={{
             tickSize: 5,
@@ -217,6 +230,7 @@ const Dashboard = () => {
           emptyColor="#eeeeee"
           colors={['#61cdbb', '#97e3d5', '#e8c1a0', '#f47560']}
           margin={{ top: 50, right: 40, bottom: 50, left: 40 }}
+          theme={chartTheme}
           yearSpacing={40}
           monthBorderColor="#ffffff"
           dayBorderWidth={2}
