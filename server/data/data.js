@@ -3,61 +3,91 @@ export const userData = [
       name: 'Isaias',
       email: 'Isaias@oursite.com',
       password: 'Password1',
-      role: 'SuperAdmin'
+      role: 'SuperAdmin',
+      position: 'Marketing Consultant',
+      department: 'Sales',
+      phone: '(516) 301 1234'
    },
    {
       name: 'Justin',
       email: 'Justin@oursite.com',
       password: 'Password2',
-      role: 'Admin'
+      role: 'Admin',
+      position: 'UX/UI Developer',
+      department: 'Development',
+      phone: '(516) 401 2345'
    },
    {
       name: 'Edward',
       email: 'edward@oursite.com',
       password: 'Password3',
-      role: 'Admin'
+      role: 'Admin',
+      position: 'Accountant',
+      department: 'Accounting',
+      phone: '(516) 502 3456'
    },
    {
       name: 'Abby',
       email: 'abby@oursite.com',
       password: 'Password4',
-      role: 'User'
+      role: 'User',
+      position: 'Business Analyst',
+      department: 'Finance',
+      phone: '(516) 311 5678'
    },
    {
       name: 'Becky',
       email: 'becky@oursite.com',
       password: 'Password5',
-      role: 'User'
+      role: 'User',
+      position: 'Financial Manager',
+      department: 'Finance',
+      phone: '(516) 431 6789'
    },
    {
       name: 'Charlie',
       email: 'charlie@oursite.com',
       password: 'Password6',
-      role: 'User'
+      role: 'User',
+      position: 'Operations Manager',
+      department: 'Operations',
+      phone: '(516) 316 7890'
    },
    {
       name: 'David',
       email: 'david@oursite.com',
       password: 'Password7',
-      role: 'User'
+      role: 'User',
+      position: 'Project Manager',
+      department: 'Development',
+      phone: '(516) 655 8901'
    },
    {
       name: 'Frank',
       email: 'frank@oursite.com',
       password: 'Password8',
-      role: 'User'
+      role: 'User',
+      position: 'Team Lead',
+      department: 'Development',
+      phone: '(516) 898 9012'
    },
    {
       name: 'Gabby',
       email: 'gabby@oursite.com',
       password: 'Password9',
-      role: 'User'
+      role: 'User',
+      position: 'Receptionist',
+      department: 'Clerical',
+      phone: '(516) 347 0123'
    },
    {
       name: 'Henry',
       email: 'henry@oursite.com',
       password: 'Password10',
-      role: 'User'
+      role: 'User',
+      position: 'Account Executive',
+      department: 'Sales',
+      phone: '(516) 268 2234'
    },
 ];
 

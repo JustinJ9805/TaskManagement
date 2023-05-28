@@ -1,80 +1,53 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Button } from "@mui/material";
+import { Box, Grid, Typography, Button } from "@mui/material";
+import "./styles.css";
 
 const Employees = () => {
+  const [users, setUsers] = useState([]);
 
+  useEffect(() => {
+    axios
+      .get("http://localhost:5001/users/getUser")
+      .then((response) => {
+        setUsers(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
-    const [users, setUsers] = useState([])
-
-    useEffect(() => {
-        axios.get('http://localhost:5001/users/getUser')
-          .then((response) => {
-            //setData(response.data);
-            setUsers(response.data);
-            console.log(users)
-          })
-          .catch(error => {
-            console.log(error);
-          });
-      }, [])
-
-    return(
-        <div> 
-            <h3>Employees Page</h3>
-            <div style={{display:'flex', flexWrap:'wrap'}}>
-                <br></br>
-                {users.map(user => (
-                    <div className="employee-entry">
-                        <div style={{
-                            display: 'block',
-                            opacity: '.7',
-                            margin: '4px',
-                            padding:'0px 0px 8px 8px',
-                            border: 'double',
-                            borderWidth: '2px',
-                            borderColor: 'gold',
-                            width: '400px',
-                            backgroundColor: 'gray'
-                            
-                            }}>
-                            <h3>{user.name}</h3>
-                            <h4>Role: {user.role}</h4> 
-                            <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
-                                <Button  style={{
-                                    backgroundColor: 'steelblue',
-                                    color: 'navy',
-                                    border: 'solid',
-                                    borderWidth: '2px',
-                                    borderColor: 'navy',
-                                }}>{user.email}</Button>
-
-                                <Button style={{
-                                    backgroundColor: 'steelblue',
-                                    color: 'navy',
-                                    border: 'solid',
-                                    borderWidth: '2px',
-                                    borderColor: 'navy',
-                                }}>View</Button>
-
-<Button style={{
-                                    backgroundColor: 'steelblue',
-                                    color: 'navy',
-                                    border: 'solid',
-                                    borderWidth: '2px',
-                                    borderColor: 'navy',
-                                }}>Delete Employee</Button>
-                            </div>
-                            
-                        </div>        
-                    </div>
-                
-                ))}
-            
-            </div>
-        </div>
-    )
-}
+  return (
+    <Box sx={{}}>
+      
+      <table>
+        <tr className="Header">
+          <th className="tableHeader">Name</th>
+          <th className="tableHeader">Role</th>
+          <th className="tableHeader">Position</th>
+          <th className="tableHeader">Department</th>
+          <th className="tableHeader">Email</th>
+          <th className="tableHeader">Phone</th>
+        </tr>
+        
+        <tr className="Table">
+          {users.map((user) => {
+            return(
+              <Box sx={{display:'flex', justifyContent: 'space-evenly'}}>
+                <td className="tableEntry">{user.name}</td>
+                <td className="tableEntry">{user.role}</td>
+                <td className="tableEntry">{user.position}</td>
+                <td className="tableEntry">{user.department}</td>
+                <td className="tableEntry"><Button>{user.email}</Button></td>
+                <td className="tableEntry"><Button>{user.phone}</Button></td>
+              </Box>
+            )
+          })}
+          
+        </tr>
+      </table>
+    </Box>
+  );
+};
 
 export default Employees;
