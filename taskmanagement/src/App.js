@@ -11,6 +11,7 @@ import Employees from 'scenes/Employees';
 import Projects from 'scenes/Projects';
 import NewEmployee from "scenes/newEmployee";
 import NewProject from "scenes/newProject";
+import login from "scenes/login/";
 
 function App() {
   
