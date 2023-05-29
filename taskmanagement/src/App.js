@@ -7,10 +7,11 @@ import { BrowserRouter, Navigate, Route,Routes } from "react-router-dom";
 import { themeSettings } from "theme";
 import Layout from "scenes/layout" ;
 import Dashboard from "scenes/dashboard";
-import Employees from 'scenes/employees';
-import Projects from 'scenes/projects';
+import Employees from 'scenes/Employees';
+import Projects from 'scenes/Projects';
 import NewEmployee from "scenes/newEmployee";
 import NewProject from "scenes/newProject";
+import login from "scenes/login/";
 
 function App() {
   
