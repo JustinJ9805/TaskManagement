@@ -55,19 +55,19 @@ const NewEmployee = () => {
           </Select>
         </div>
         <div>
-          <FormLabel htmlFor="name">
+          <FormLabel htmlFor="position">
             <h3>Position:</h3>
           </FormLabel>
           <TextField color="warning" required={true} id="position" />
         </div>
         <div>
-          <FormLabel htmlFor="name">
+          <FormLabel htmlFor="department">
             <h3>Department:</h3>
           </FormLabel>
           <TextField color="warning" required={true} id="department" />
         </div>
         <div>
-          <FormLabel htmlFor="name">
+          <FormLabel htmlFor="phone">
             <h3>Phone:</h3>
           </FormLabel>
           <TextField color="warning" required={true} id="phone" />
