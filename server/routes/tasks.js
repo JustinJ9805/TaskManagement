@@ -7,7 +7,7 @@ const router = express.Router()
 router.get('/getTasksStatus', TasksController.getTaskStatus);
 
 router.post("/", async (req, res) => {
-    const {taskName, projectName, dueDate, description  } = req.body;
+    const {taskName, projectName, dueDate, description} = req.body;
     const tasks = new Tasks({
       taskName: taskName,
       projectName: projectName,
@@ -17,7 +17,7 @@ router.post("/", async (req, res) => {
       description: description
     });
     console.log("created post")
-    await projects.save()
+    await tasks.save()
     .then((newtask) =>{
       res.status(201).json(newtask)
     })
