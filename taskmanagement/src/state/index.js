@@ -2,7 +2,7 @@ import { light } from "@mui/material/styles/createPalette";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    mode: "light",
+    mode: "dark",
     user_id:"10",
 };
 

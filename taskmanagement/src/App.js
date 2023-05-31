@@ -11,6 +11,8 @@ import Employees from 'scenes/Employees';
 import Projects from 'scenes/Projects';
 import NewEmployee from "scenes/newEmployee";
 import NewProject from "scenes/newProject";
+import NewTask from "scenes/newTask";
+import NewUpdate from "scenes/newUpdate";
 //import login from "scenes/login/";
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
             <Route path="/projects" element={<Projects/>}/>
             <Route path="/newemployee" element={<NewEmployee/>}/>
             <Route path="/newproject" element={<NewProject/>}/>
+            <Route path="/newtask" element={<NewTask/>}/>
+            <Route path="/newupdate" element={<NewUpdate/>}/>
           </Route>
         </Routes>
       </ThemeProvider>

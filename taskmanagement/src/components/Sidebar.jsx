@@ -28,14 +28,15 @@ import{
     CreateNewFolderOutlined,
     FolderOpenOutlined,
     PortraitOutlined,
-    CalendarMonthOutlined
+    CalendarMonthOutlined,
+    
     //CreateNewFolderOutlined
 } from "@mui/icons-material";
 import { useEffect,useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import FlexBetween from './FlexBetween';
 import profileImage from 'assets/picture.jpeg';
-
+import PlusOneIcon from '@mui/icons-material/PlusOne';
 
 
 
@@ -50,6 +51,16 @@ const navItems = [
     {
         text:"Projects",
         icon: null,
+    },
+    {
+        text: "New Task",
+        link: 'NewTask',
+        icon:<PlusOneIcon/>
+    },
+    {
+        text: "New Update",
+        link: 'NewUpdate',
+        icon:<PlusOneIcon/>
     },
     {
         text:"New Project",
@@ -144,7 +155,7 @@ const Sidebar = ({
                     <FlexBetween color={theme.palette.secondary.main}>
                         <Box display="flex" alignItems="center" gap="0.5rem">
                             <Typography variant='h4' fontWeight="bold">
-                                NameGoesHere
+                                Expansion Pack
                             </Typography>
                         </Box>
                         {!isNonMobile &&(
