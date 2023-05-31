@@ -16,6 +16,7 @@ const NewEmployee = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("")
   const [role, setRole] = useState(SuperAdmin);
   const [position, setPosition] = useState("");
   const [department, setDepartment] = useState("");
@@ -37,6 +38,7 @@ const NewEmployee = () => {
       setName("");
       setEmail("");
       setPassword("");
+      setConfirmPassword("")
       setRole(SuperAdmin);
       setDepartment("");
       setPosition("");
@@ -99,6 +101,8 @@ const NewEmployee = () => {
             color="warning"
             required={true}
             id="confirm-password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </div>
 
