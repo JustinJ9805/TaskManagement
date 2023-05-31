@@ -15,6 +15,7 @@ const NewEmployee = () => {
 
   return (
     <div>
+
       <h3>Create New Employee</h3>
 
       <FormControl>
@@ -53,12 +54,32 @@ const NewEmployee = () => {
             <MenuItem value={User}>User</MenuItem>
           </Select>
         </div>
-    
+        <div>
+          <FormLabel htmlFor="position">
+            <h3>Position:</h3>
+          </FormLabel>
+          <TextField color="warning" required={true} id="position" />
+        </div>
+        <div>
+          <FormLabel htmlFor="department">
+            <h3>Department:</h3>
+          </FormLabel>
+          <TextField color="warning" required={true} id="department" />
+        </div>
+        <div>
+          <FormLabel htmlFor="phone">
+            <h3>Phone:</h3>
+          </FormLabel>
+          <TextField color="warning" required={true} id="phone" />
+        </div>
+
         <Button>
           <h3>Create Employee</h3>
         </Button>
       </FormControl>
+      
     </div>
+    
   );
 };
 
